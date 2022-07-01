@@ -6,5 +6,3 @@ if MyString == MyString[::-1]:
     print("Yes, it is a palindrome")
 else:
     print("No, It is not palindrome")
-
-# Exit Code
