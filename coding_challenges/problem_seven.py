@@ -6,9 +6,9 @@ import random
 l = list(range(5))
 
 # before shuffle
-print(l)
+print("Before shuffling...",l)
 
 
 random.shuffle(l)
 # After shuffle
-print(l)
+print("After shuffling...",l)
