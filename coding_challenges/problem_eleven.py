@@ -7,11 +7,8 @@ def HowManyTimes(string, character):
             count += 1
     return count
 
-def main():
-    string = input("Please enter a string: ")
-    character = input("Please enter a character: ")
-    count = HowManyTimes(string, character)
-    print(count)
 
-if __name__ == '__main__':
-    main()
+string = input("Please enter a string: ")
+character = input("Please enter a character: ")
+count = HowManyTimes(string, character)
+print(count)
