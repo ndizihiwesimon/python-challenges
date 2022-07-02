@@ -6,3 +6,11 @@
 # Then the output should be:
 # 1010
 # Notes: Assume the data is input by console.
+
+items = []
+num = [x for x in input("Enter binary numbers: ").split(',')]
+for p in num:
+    x = int(p, 2)
+    if not x%5:
+        items.append(p)
+print(','.join(items))
