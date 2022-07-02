@@ -21,7 +21,7 @@ def CountFrequency(sonnet1):
 			freq[item] = 1
 
 	for key, value in freq.items():
-		print ("% s : % d"%(key, value))
+		print(f'{key}: {value}')
 
 # Driver function
 if __name__ == "__main__":
