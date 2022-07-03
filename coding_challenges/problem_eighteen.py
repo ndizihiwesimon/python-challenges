@@ -8,17 +8,22 @@
 def Remainder(number):
     return number % 2
 
-def Check(number):
-    a = {}
-    for i in range(len(a)):
-        if number in a:
-            continue
-        else:
-            a[number] = Remainder(number)
+def Check():
+    
+    n = int(input("Enter a number to loop: "))
+    j = 1
+    while j in range(n):
+        number = int(input("Enter a number: "))
+        a = {}
+        for i in range(n):
+            if number in a:
+                continue
+            else:
+                a[number] = Remainder(number)
 
-    for key, value in a.items():
-        print(f'{key}: {value}')
+        for key, value in a.items():
+            print(f'{key}: {value}')
+        j += 1
 
 if __name__ == '__main__':
-    num = input("Enter a number: ")
-    Check(num)
+    Check()
