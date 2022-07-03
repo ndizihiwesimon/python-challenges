@@ -19,6 +19,7 @@
 
 
 class Department:
+    # Initialize the department
     def __init__(self):
         self.Students = []
         self.Subjects = []
@@ -28,18 +29,20 @@ class Department:
         self.StudTotalMarks = {}
         self.StudFeedback = {}
     
-
+    # Method for creating the subjects
     def subjects(self):
         n = int(input("Enter number of Subjects: \n"))
         self.TotalMarks = n * 100
         for i in range(n):
             self.Subjects.append(input("Enter Subject name: "))
-
+   
+    #  Method to record students
     def students(self):
         n = int(input("\nEnter number of Students: \n"))
         for i in range(n):
             self.Students.append(input("Enter Student name: "))
 
+    #  Method that calculate and generates marks for students
     def marks(self):
         stud = len(self.Students)
         obj = len(self.Subjects)
@@ -66,7 +69,7 @@ class Department:
             studAvg = 0.00
     
 
-
+    #  Method to display results
     def get_marks(self):
         stud = len(self.Students)
         obj = len(self.Subjects)
@@ -80,7 +83,6 @@ class Department:
             print("Average marks: %d out of 100 " % self.avgDict.get(self.Students[i]))
             print("Feedback: %s " % self.StudFeedback.get(self.Students[i]))
             print("\n")
-
 
 if __name__ == "__main__":
     department = Department() #Created object for department
