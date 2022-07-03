@@ -18,41 +18,52 @@
 # subjects = ["Algorithms and Data Structures","Java","Web App Development","Databases", "Human Computer Interaction", "Information Retrieval"]``
 
 
-from audioop import avg
-
-
 class Department:
     def __init__(self):
         self.Students = []
         self.Subjects = []
         self.Marks = []
+        self.TotalMarks = 0
+        self.avgDict = {}
+        self.StudTotalMarks = {}
+        self.StudFeedback = {}
     
+
     def subjects(self):
-        n = int(input("Enter number of Subjects: "))
+        n = int(input("Enter number of Subjects: \n"))
+        self.TotalMarks = n * 100
         for i in range(n):
             self.Subjects.append(input("Enter Subject name: "))
 
     def students(self):
-        n = int(input("Enter number of Students: "))
+        n = int(input("\nEnter number of Students: \n"))
         for i in range(n):
             self.Students.append(input("Enter Student name: "))
 
     def marks(self):
         stud = len(self.Students)
         obj = len(self.Subjects)
-        studMarks = []
         studSum = 0.00
         studAvg = 0.00
-        avgDict = {}
         for i in range(stud):
-            print("Record %s marks: \n" % self.Students[i])
+            print("\nRecord %s marks out of 100: \n" % self.Students[i])
+            studMarks = []
             for j in range(obj):
                 mrk = float(input("Enter %s marks: " % self.Subjects[j]))
                 studMarks.append(mrk)
                 studSum += mrk
             self.Marks.append(studMarks)
             studAvg = studSum / obj
-            avgDict[self.Students[i]] = studAvg
+            if studAvg >= 70:
+                self.StudFeedback[self.Students[i]] = "Honours"
+            elif studAvg < 70 >= 50:
+                self.StudFeedback[self.Students[i]] = "Pass"
+            else:
+                self.StudFeedback[self.Students[i]] = "Fail"
+            self.StudTotalMarks[self.Students[i]] = studSum
+            self.avgDict[self.Students[i]] = studAvg
+            studSum = 0.00
+            studAvg = 0.00
     
 
 
@@ -60,10 +71,15 @@ class Department:
         stud = len(self.Students)
         obj = len(self.Subjects)
         for i in range(stud):
-            print("Below is %s marks: \n" % self.Students[i])
+            print("\nBelow is %s marks: \n" % self.Students[i])
             for j in range(obj):
                 print("%s : %d" % (self.Subjects[j], self.Marks[i][j]))
-
+            print("\n")
+            print("================================")
+            print("Total marks: %d out of %d " % (self.StudTotalMarks.get(self.Students[i]), self.TotalMarks))
+            print("Average marks: %d out of 100 " % self.avgDict.get(self.Students[i]))
+            print("Feedback: %s " % self.StudFeedback.get(self.Students[i]))
+            print("\n")
 
 
 if __name__ == "__main__":
