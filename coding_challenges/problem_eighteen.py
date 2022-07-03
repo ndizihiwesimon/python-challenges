@@ -5,25 +5,28 @@
 # you should be able to build the relevant dictionary from the reading problems at the beginning of this section.
 
 
-def Remainder(number):
-    return number % 2
+def Division(number): # Method to return the number divided by the three
+    return number / 3
 
 def Check():
     
     n = int(input("Enter a number to loop: "))
-    j = 0
-    while j in range(n):
-        number = int(input("Enter a number: "))
-        a = {}
-        for i in range(n):
-            if number in a:
+    j = 0 
+    a = {} #Initialize dictionary
+    
+    while j in range(n): # loop through until condition is False
+        number = float(input("Enter a number: "))
+        a[number] = Division(number) #Store the result into a dictionary for first time
+        for i in a:
+            if number in a: # Check if the number is already in the dictionary
                 continue
-            else:
-                a[number] = Remainder(number)
-
-        for key, value in a.items():
-            print(f'{key}: {value}')
+            else: # Else add it to the dictionary
+                a[number] = Division(number)
         j += 1
+    
+    print("\nEntered numbers with calculations\n")
+    for key, value in a.items(): # Looping through the dictionary
+        print(f'{key}: {value}')
 
 if __name__ == '__main__':
     Check()
