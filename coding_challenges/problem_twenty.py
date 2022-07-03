@@ -17,3 +17,59 @@
 # 
 # subjects = ["Algorithms and Data Structures","Java","Web App Development","Databases", "Human Computer Interaction", "Information Retrieval"]``
 
+
+from audioop import avg
+
+
+class Department:
+    def __init__(self):
+        self.Students = []
+        self.Subjects = []
+        self.Marks = []
+    
+    def subjects(self):
+        n = int(input("Enter number of Subjects: "))
+        for i in range(n):
+            self.Subjects.append(input("Enter Subject name: "))
+
+    def students(self):
+        n = int(input("Enter number of Students: "))
+        for i in range(n):
+            self.Students.append(input("Enter Student name: "))
+
+    def marks(self):
+        stud = len(self.Students)
+        obj = len(self.Subjects)
+        studMarks = []
+        studSum = 0.00
+        studAvg = 0.00
+        avgDict = {}
+        for i in range(stud):
+            print("Record %s marks: \n" % self.Students[i])
+            for j in range(obj):
+                mrk = float(input("Enter %s marks: " % self.Subjects[j]))
+                studMarks.append(mrk)
+                studSum += mrk
+            self.Marks.append(studMarks)
+            studAvg = studSum / obj
+            avgDict[self.Students[i]] = studAvg
+    
+
+
+    def get_marks(self):
+        stud = len(self.Students)
+        obj = len(self.Subjects)
+        for i in range(stud):
+            print("Below is %s marks: \n" % self.Students[i])
+            for j in range(obj):
+                print("%s : %d" % (self.Subjects[j], self.Marks[i][j]))
+
+
+
+if __name__ == "__main__":
+    department = Department() #Created object for department
+
+    department.subjects()
+    department.students()
+    department.marks()
+    department.get_marks()
