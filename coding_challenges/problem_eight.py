@@ -19,6 +19,8 @@ def randomString(n):
     
     return s
 
+length = int(input("Enter the length: "))
+
 # Displaying random string
-print(randomString(5))
+print(randomString(length))
 

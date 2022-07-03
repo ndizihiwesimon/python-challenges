@@ -28,6 +28,8 @@ class Department:
         self.avgDict = {}
         self.StudTotalMarks = {}
         self.StudFeedback = {}
+        self.Satisfier = 0
+        self.Highest = {}
     
     # Method for creating the subjects
     def subjects(self):
@@ -58,6 +60,7 @@ class Department:
             self.Marks.append(studMarks)
             studAvg = studSum / obj
             if studAvg >= 70:
+                self.Satisfier += 1
                 self.StudFeedback[self.Students[i]] = "Honours"
             elif studAvg < 70 >= 50:
                 self.StudFeedback[self.Students[i]] = "Pass"
@@ -83,6 +86,7 @@ class Department:
             print("Average marks: %d out of 100 " % self.avgDict.get(self.Students[i]))
             print("Feedback: %s " % self.StudFeedback.get(self.Students[i]))
             print("\n")
+
 
 if __name__ == "__main__":
     department = Department() #Created object for department
