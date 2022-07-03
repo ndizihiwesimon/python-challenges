@@ -4,8 +4,6 @@
 # If it has been seen already, look up the result in the dictionary. For the double function given as an example, 
 # you should be able to build the relevant dictionary from the reading problems at the beginning of this section.
 
-import re
-
 
 def Remainder(number):
     return number % 2
@@ -22,5 +20,5 @@ def Check(number):
         print(f'{key}: {value}')
 
 if __name__ == '__main__':
-    num = input("Enter a number")
+    num = input("Enter a number: ")
     Check(num)
