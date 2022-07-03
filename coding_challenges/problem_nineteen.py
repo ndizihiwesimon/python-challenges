@@ -4,7 +4,8 @@
 # 2. Deposit
 # 3. Current balance
 # 4. Exit
- 
+
+
 class ATM:
     def __init__(self, name, amount):
         self.name = name
@@ -13,6 +14,7 @@ class ATM:
     def withdraw(self, amount):
         if self.amount >= amount:
             self.amount -= amount
+            print("Amount withdrawn successfully, New balance: %s" % self.amount)
         else:
             print("Insufficient funds to withdraw: %s available: %s" % (amount, self.amount))
     
@@ -20,7 +22,7 @@ class ATM:
         self.amount += amount
         print("Deposit done successfully, deposited amount: %s New balance: %s" % (amount, self.amount))
 
-    def balance(self, amount):
+    def balance(self):
         print("You have %s on your account!" % self.amount)
 
     def stop(self):
@@ -28,11 +30,34 @@ class ATM:
             
 if __name__ == '__main__':
     name = input('Enter your Name: ')
-    amount = input('Please enter starting amount: ')
+    amount = int(input('Please enter starting amount: '))
     service = ATM(name, amount)
     
     on = True
     while on:
+        print("\n")
         print("ATM")
+        print(" 1. Withdraw \n 2. Deposit \n 3. Current balance \n 4. Exit")
         
+        print("\n")
+        choice = int(input('Select service: '))
+
+        print("\n")
+        match choice:
+            case 1:
+                amount = int(input('Please enter amount to withdraw: '))
+                service.withdraw(amount)
+            case 2:
+                amount = int(input('Please enter amount to deposit: '))
+                service.deposit(amount)
+            case 3:
+                service.balance()
+            case 4:
+                service.stop()
+                on = False
+            case default:
+                print("Please enter service number!")
+
+
+
 
