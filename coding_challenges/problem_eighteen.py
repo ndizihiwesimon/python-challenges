@@ -11,7 +11,7 @@ def Remainder(number):
 def Check():
     
     n = int(input("Enter a number to loop: "))
-    j = 1
+    j = 0
     while j in range(n):
         number = int(input("Enter a number: "))
         a = {}
