@@ -5,12 +5,13 @@
 # 3. Current balance
 # 4. Exit
 
-
+# ATM class
 class ATM:
     def __init__(self, name, amount):
         self.name = name
         self.amount = amount
 
+    # Withdraw method
     def withdraw(self, amount):
         if self.amount >= amount:
             self.amount -= amount
@@ -18,13 +19,16 @@ class ATM:
         else:
             print("Insufficient funds to withdraw: %s available: %s" % (amount, self.amount))
     
+    # Deposit amount method
     def deposit(self, amount):
         self.amount += amount
         print("Deposit done successfully, deposited amount: %s New balance: %s" % (amount, self.amount))
 
+    # Current Balance method
     def balance(self):
         print("You have %s on your account!" % self.amount)
-
+    
+    # Method to stop ATM transactions
     def stop(self):
         return print("%s, Thank you for using ATM services" % self.name)
             
