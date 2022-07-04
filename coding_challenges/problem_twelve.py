@@ -8,4 +8,5 @@ def ListUnions(list1, list2):
 list1 = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 list2 = ['12', '32', '3', '64', '5',]
 
+# print list
 print("New list", ListUnions(list1, list2))
