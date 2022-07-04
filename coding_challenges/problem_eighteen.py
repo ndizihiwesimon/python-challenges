@@ -5,7 +5,7 @@
 # you should be able to build the relevant dictionary from the reading problems at the beginning of this section.
 
 
-def Division(number): # Method to return the number divided by the three
+def Division(number): # Method to return the number divided by the three or another given number
     return number / 3
 
 def Check():
