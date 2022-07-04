@@ -10,5 +10,5 @@ for i in range(0, len(TheList)):
     if TheList[i] % 3 == 0:
         yes += 1
         
-# Displaying result
+# Displaying result on terminal
 print(yes, "of elements are multiples of 3")
