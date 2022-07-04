@@ -21,6 +21,6 @@ def randomString(n):
 
 length = int(input("Enter the length: "))
 
-# Displaying random string
+# Displaying random string on string
 print(randomString(length))
 
